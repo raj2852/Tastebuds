@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us</title>
+</head>
+<script type="text/javascript">
+	function validate()
+	{
+		var username = document.getElementById("user");
+		var password = document.getElementById("pass");
+
+		if(username.value.trim()=="" || password.value.trim()=="")
+		{
+            alert("Blank values not allowed!");
+			return false;
+		}
+		
+		else{
+			alert("Credentials submitted successfully!");
+			return true;
+		}
+	}
+
+	function check()
+	{
+		var first = document.getElementById("first");
+		var last = document.getElementById("last");
+		var num = document.getElementById("num");
+		var passw = document.getElementById("passw");
+
+		if(first.value.trim()=="" || last.value.trim()=="")
+		{
+             alert("Please check the input fields!");
+             return false;
+		}
+		else if(first.value.trim()==passw.value.trim()||last.value.trim()==passw.value.trim()){
+			alert("Choose a secure password");
+			return false;
+		}
+		else{
+			alert("Thank you for registering with us!");
+			return true;
+		}
+	}
+</script>
+<style>
+	body{
+		background-color: #f22121;
+	}
+	h1{
+		color: #ffffff;
+		text-align: center;
+		
+	}
+	h2{
+		
+		color: #ffffff;
+		
+	}
+	p{
+		color: #fff;
+		font-size: 16px;
+	}
+	button{
+		height: 30px;
+		width: 100px;
+		border-radius: 10px;
+		background-color: #ffd300;
+	}
+	a{
+		color: #fff;
+		text-decoration: none;
+	}
+	a:hover{
+		color: #ffd300;
+	}
+	section{
+		display: inline-block;
+		width: 32%;
+		height: 100%;
+		float: left;
+    }
+    #sign, #log{
+       padding-left: 20px;
+    }
+</style>
+<body>
+	<button type="post"><a href="index.html"><font color="darkred">Home Page</font></a></button>
+	<p><a href="index.html">Home</a> > Contact Us</p>
+<h1><b>Login or Sign Up to get in contact<b></h1>
+<br>
+<br>
+<section id="sign">
+	<h2 align="center"><u>New to us! Sign up</u></h2>
+	<form onsubmit="return check()" action="main.html">
+		<label><font color="white">First Name:  </font></label>
+		<input id="first" type="text" name="first name" placeholder="First name" required><br><br>
+		<label><font color="white">Last Name:  </label>
+		<input id="last" type="text" name="last name" placeholder="Last name" required>
+		<p>Your first name will be the User Name for login.</p>
+		<p>Your gender:  </p>
+		<input type="radio" id="gender1" name="gender">
+		<label for="gender1">Male<label><br>
+        <input type="radio" id="gender2" name="gender">
+        <label for="gender2">Female<label><br>
+        <input type="radio" name="gender" id="gender3">
+        <label for="gender3">Prefer not to say<label><br><br>
+        <label>Phone Number: </label>
+        <input id="num" type="number" name="phone" placeholder="Enter 10 digit mobile number" required="number" min="7000000000" max="9999999999"><br><br>
+		<label><font color="white">Password:  </font></label>
+		<input id="passw" type="password" name="Password" placeholder="Enter new password" required><br><br>
+		<input type="checkbox" name="choice">Send me notifications about ongoing offers<br><br>
+
+
+	</form>
+	
+	<button type="post" id="signup"><a href="main.html"><font color="green">Sign Up</font></a></button>
+</section>
+<section id="log">
+	<h2 align="center"><u>Already have account! Login</u></h2>
+	<form onsubmit="return validate()" action="main.html">
+		<label>User Name:</label><input id="user" type="text" placeholder="Enter User name" required><br><br>
+
+        <label>Your Password:</label><input id="pass" type="password" placeholder="Enter your Password" required><br><br>
+        <button type="post" id="login"><a href="main.html"><font color="green">Login</font></a></button>
+	</form>
+</section>
+<br>
+<br>
+<section id="text">
+<p><font size="6">Want us to deliver at our parties? Contact us</font></p><br>
+<p><font size="6">Email: support@tastebuds.com</font></p><br>
+<p><font size="6">Call us : 1234567890</font></p>
+</section>
+</body>
+</html>
