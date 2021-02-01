@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Veg pizza customization</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<style>
+	body{
+		background-color: #f22121;
+	}
+	button{
+		background-color: #fff;
+		height: 30px;
+		width: 100px;
+		border-color: #f22121;
+		border-radius: 10px;
+	}
+	a{
+		color: #fff;
+		text-decoration: none;
+	}
+	a:hover{
+		color: #fff;
+	}
+	h1{
+		text-align: center;
+		color: #fff;
+		font-size: 40px;
+	}
+	.total{
+		/*height: auto;
+		width: 100%;
+		color: #fff;*/
+		 position: relative;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	border-spacing: 10px;
+	}
+	.custom{
+		height: auto;
+		width: 100%;
+		color: #fff;
+		position: relative;
+		
+	}
+	.card{
+		padding: 15px;
+		width: 100%;
+		position: relative;
+		box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+		background: rgba(255,255,255,0.2);
+		border-radius: 10px;
+		border-top: 1px solid rgba(2555,255,255,0.5);
+		border-left: 1px solid rgba(2555,255,255,0.5);
+		backdrop-filter: blur(5px);
+	}
+	.ok{
+		background: #ffd300;
+	}
+	#ok{
+		color: #8B0000;
+	}
+</style>
+<body>
+<button type="post"><a href="main.html"><font color="darkred">BACK</font></a></button>
+<br>
+<br>
+<h1>Let's customize your veg pizza🍕</h1>
+	<br>
+<div class="total">
+<div class="col-lg-6 col-md-12 col-sm-12">
+	<div class="custom">
+	
+	<font size="4px" color="white">Crust/Bread Size:</font>
+	<br>
+	<br>
+	<input type="radio" name="size" id="size1"><font color="white">Small  (Rs.50)</input><br>
+	<input type="radio" name="size" id="size2"><font color="white">Medium  (Rs.60)</input><br>
+	<input type="radio" name="size" id="size3"><font color="white">Large  (Rs.70)</input>
+	<br>
+	<br>
+	<font size="4px" color="white">Toppings:</font>
+	<br>
+	<br>
+	<input type="radio" name="top" id="top1"><font color="white">Cheese + Onion  (Rs.40)</font></input><br>
+	<input type="radio" name="top" id="top2"><font color="white">Cheese + Corn  (Rs.50)</font></input><br>
+	<input type="radio" name="top" id="top3"><font color="white">Cheese + Mushroom  (Rs.60)</font></input><br>
+	<input type="radio" name="top" id="top4"><font color="white">Cheese + Organic vegies  (Rs.70)</font></input><br>
+	<input type="radio" name="top" id="top5"><font color="white">Cheese + Onion + Corn   (Rs.70)</font></input><br>
+	<input type="radio" name="top" id="top6"><font color="white">Cheese + Onion + Mushroom  (Rs.80)</font></input><br>
+	<input type="radio" name="top" id="top7"><font color="white">Cheese + Corn + Mushroom  (Rs.80)</font></input><br>
+	<input type="radio" name="top" id="top8"><font color="white">Cheese + Corn + Organic vegies  (Rs.100)</font></input><br>
+	<input type="radio" name="top" id="top9"><font color="white">Cheese + Onion + Organic Vegies  (Rs.120)</font></input><br>
+	<input type="radio" name="top" id="top10"><font color="white">Cheese + Mushroom + Organic vegies  (Rs.120)</font></input><br>
+</div>
+</div>
+	<div class="col-lg-6 col-md-12 col-sm-12">
+		<div class="card">
+			<button onclick="total()">Find total</button>
+			<p id="total"></p>
+			<br>
+			<button type="post" class="ok"><a id="ok" onclick="return fn()" href="cart.html" target="_blank">Done</a></button>
+		</div>
+	</div>
+</div>
+<script>
+	function total(){
+		var a = document.getElementById('size1').value=50;
+		var b = document.getElementById('size2').value=60;
+		var c = document.getElementById('size3').value=70;
+		var d = document.getElementById('top1').value=40;
+		var e = document.getElementById('top2').value=50;
+		var f = document.getElementById('top3').value=60;
+		var g = document.getElementById('top4').value=70;
+		var h = document.getElementById('top5').value=70;
+		var i = document.getElementById('top6').value=80;
+		var j = document.getElementById('top7').value=80;
+		var k = document.getElementById('top8').value=100;
+		var l = document.getElementById('top9').value=120;
+		var m = document.getElementById('top10').value=120;
+		//for small crust
+		if(document.getElementById('size1').checked && document.getElementById('top1').checked){
+			var sum = a+d;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size1').checked && document.getElementById('top2').checked){
+			var sum = a+e;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size1').checked && document.getElementById('top3').checked){
+			var sum = a+f;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size1').checked && document.getElementById('top4').checked){
+			var sum = a+g;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size1').checked && document.getElementById('top5').checked){
+			var sum = a+h;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size1').checked && document.getElementById('top6').checked){
+			var sum = a+i;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size1').checked && document.getElementById('top7').checked){
+			var sum = a+j;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size1').checked && document.getElementById('top8').checked){
+			var sum = a+k;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size1').checked && document.getElementById('top9').checked){
+			var sum = a+l;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size1').checked && document.getElementById('top10').checked){
+			var sum = a+m;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+
+		//for medium crust
+		if(document.getElementById('size2').checked && document.getElementById('top1').checked){
+			var sum = b+d;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size2').checked && document.getElementById('top2').checked){
+			var sum = b+e;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size2').checked && document.getElementById('top3').checked){
+			var sum = b+f;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size2').checked && document.getElementById('top4').checked){
+			var sum = b+g;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size2').checked && document.getElementById('top5').checked){
+			var sum = b+h;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size2').checked && document.getElementById('top6').checked){
+			var sum = b+i;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size2').checked && document.getElementById('top7').checked){
+			var sum = b+j;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size2').checked && document.getElementById('top8').checked){
+			var sum = b+k;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size2').checked && document.getElementById('top9').checked){
+			var sum = b+l;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size2').checked && document.getElementById('top10').checked){
+			var sum = b+m;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+
+		//for large crust
+		if(document.getElementById('size3').checked && document.getElementById('top1').checked){
+			var sum = c+d;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size3').checked && document.getElementById('top2').checked){
+			var sum = c+e;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size3').checked && document.getElementById('top3').checked){
+			var sum = c+f;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size3').checked && document.getElementById('top4').checked){
+			var sum = c+g;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size3').checked && document.getElementById('top5').checked){
+			var sum = c+h;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size3').checked && document.getElementById('top6').checked){
+			var sum = c+i;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size3').checked && document.getElementById('top7').checked){
+			var sum = c+j;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size3').checked && document.getElementById('top8').checked){
+			var sum = c+k;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size3').checked && document.getElementById('top9').checked){
+			var sum = c+l;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+		if(document.getElementById('size3').checked && document.getElementById('top10').checked){
+			var sum = c+m;
+			document.getElementById("total").innerHTML="Your total after customization is RS. "+sum;
+		}
+
+	}
+	function fn(){
+		var a = document.getElementById("ok");
+		alert("Final customization will be saved to cart! Are you sure?");
+	}
+</script>
+</body>
+</html>
