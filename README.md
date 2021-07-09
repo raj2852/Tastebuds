@@ -1,3 +1,3 @@
 # Tastebuds
-Repository for the food ordering site https://raj2852.github.io/Tastebuds/
+Repository for the food ordering site https://raj2852.github.io/tastebuds/
 Tastebuds is a unique food ordering site where you are given the freedom to customize your own food. The best part is you can get your order delivered as and when you wish, your date, your timing. Tastebuds in itself is an organization and does not tie up with other restaurants for the food. Instead, we hire chefs and pay them for their service, no middlemen. This site also addresses a solution to the social evil of "HUNGER", by providing food of equivalent amount to the needy from the savings of all orders that we receive throughout the day, i.e. your saved amount is transferred to the needy as food.
